@@ -1,0 +1,3 @@
+FROM setup
+
+CMD ["python", "test.py"]

@@ -1,0 +1,13 @@
+FROM python:3
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y git
+
+RUN pip install unittest2
+
+RUN git clone https://github.com/Chennaipy/hangman.git .
+
+RUN sed -i '/import unittest2/ s/import unittest2 as unittest/import unittest/' test.py
+
+RUN python setup.py build

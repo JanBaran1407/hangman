@@ -1,3 +1,3 @@
-FROM setup
+FROM build_stage
 
 CMD ["python", "test.py"]
